@@ -1,4 +1,7 @@
+/*Menggunakan syntax CREATE TABLE untuk membuat tabel analisa baru dengan nama kf_analysis_performance pada dataset kimia_farma
+
 CREATE TABLE kimia_farma.kf_analysis_performance AS
+/*syntax SELECT digunakan untuk mengambil informasi dari database
 SELECT
     ft.transaction_id,
     ft.date,
@@ -30,6 +33,7 @@ SELECT
     ft.rating AS rating_transaksi
 FROM
     kimia_farma.kf_final_transaction AS ft
+/*syntax INNER JOIN digunakan untuk menggabungkan data dari dua atau lebih tabel
 INNER JOIN 
     kimia_farma.kf_kantor_cabang AS kc
 ON
@@ -38,4 +42,5 @@ INNER JOIN
     kimia_farma.kf_product AS p
 ON
     ft.product_id = p.product_id
+/*syntax ORDER BY DESC digunakan untuk mengurutkan data pada tabel dalam urutan menurun
 ORDER BY date DESC;
